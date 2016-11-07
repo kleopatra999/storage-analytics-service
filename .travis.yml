@@ -39,4 +39,7 @@ after_success:
 - docker push cloudboost/storage-analytics-service:latest
 #Upload to Kubernetes for deployment.
 - kubectl rolling-update cloudboost-sas --image=cloudboost/storage-analytics-service:2.0.$TRAVIS_BUILD_NUMBER
+#Notify Team on Slack
+notifications:
+  slack: cloudboost:gm7nWJDLDtBRyF75VKLKOoMW
 
